@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import data from "./data.json";
-//sort name
-//diffrent sex color
 
 const Home = () => {
   let sortName = data.sort((a, b) => {
