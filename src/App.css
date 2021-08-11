@@ -1,4 +1,36 @@
 .App{
-    display: flex;
+    border: 0.5rem solid;
+    border-color: pink #a0cfee  #a0cfee  pink;
+    border-radius: 12px;
+    margin:15px 15px 15px 15px
+
+}
+.form-inline{
+    justify-content: space-between;
+    margin: 10px 50px 10px 80px;
+    width: auto;
 }
 
+
+.girlColor{
+    background: #ffc6e5;
+    color: #940050;
+    border: solid pink 5px;
+    border-radius: 5px;
+    font-weight: 600
+}
+
+.boyColor{
+    background: #a0cfee;
+    color: #16527a;
+    border: solid #a0cfee 5px;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+li{
+  list-style: none;
+  display: inline-block;
+  padding: .25rem .75rem;
+  margin: 2px;
+  border-radius: 3px}

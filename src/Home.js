@@ -1,28 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "./data.json";
 
 const Home = () => {
-  let sortName = data.sort((a, b) => {
+  const [searchName, setSearchName] = useState("");
+
+  const sortName = data.sort((a, b) => {
     return b.name > a.name ? -1 : 1;
   });
 
+  const searchHandle = (e) => {
+    setSearchName(e.target.value);
+  };
+
   return (
     <div>
-      {sortName.map((baby) => {
-        return (
-          <div>
-            <p
-              style={
-                baby.sex === "f"
-                  ? { background: "pink" }
-                  : { background: "blue" }
-              }
-            >
+      <form className="form-inline">
+        <input
+          value={searchName}
+          onChange={searchHandle}
+          className="form-control mr-sm-2"
+          type="search"
+          placeholder="Search a name"
+          aria-label="Search"
+        />
+      </form>
+      <ul>
+        {sortName
+          .filter((baby) =>
+            baby.name.toUpperCase().includes(searchName.toUpperCase())
+          )
+          .map((baby) => (
+            <li className={baby.sex === "f" ? "girlColor" : "boyColor"} key={baby.id}>
               {baby.name}
-            </p>
-          </div>
-        );
-      })}
+            </li>
+          ))}
+      </ul>
     </div>
   );
 };
