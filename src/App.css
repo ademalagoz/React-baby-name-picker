@@ -10,6 +10,12 @@
     margin: 10px 50px 10px 80px;
     width: auto;
 }
+.favorites{
+    border: 0.5rem solid;
+    border-color: pink #a0cfee  #a0cfee  pink;
+    margin:35px 35px 35px 35px;
+    width: 570px;
+}
 
 
 .girlColor{
