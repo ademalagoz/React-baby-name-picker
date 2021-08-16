@@ -1,9 +1,10 @@
 import FavoriteNames from "./FavoriteNames";
-const AddNames = ({ searchFilter, favNames, setFavNames }) => {
+const AddNames = ({ searchFilter, favName, setFavName }) => {
   const filteredNames = searchFilter.filter(
-    (baby) => !favNames.includes(baby.id)
+    (baby) => !favName.includes(baby.id)
   );
-  const addToFavNames = (id) => setFavNames([...favNames, id]);
+  console.log(filteredNames);
+  const addToFavNames = (id) => setFavName([...favName, id]);
 
   return (
     <div>

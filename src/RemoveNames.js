@@ -1,16 +1,16 @@
 import React from "react";
 import FavoriteNames from "./FavoriteNames";
 
-const RemoveNames = ({ searchFilter, favNames, setFavNames }) => {
-  const favNamesList = searchFilter.filter((baby) =>
-    favNames.includes(baby.id)
-  );
-  const removeName = (id) =>
-    setFavNames(favNames.filter((baby) => baby !== id));
+const RemoveNames = ({ searchFilter, favName, setFavName }) => {
+  const favNamesList = searchFilter.filter((baby) => favName.includes(baby.id));
+  const removeName = (id) => setFavName(favName.filter((baby) => baby !== id));
 
+  const clickFavorites = favNamesList.length > 0;
   return (
     <div>
-      <h3>Favorite Names:</h3>
+      <h3>
+        {clickFavorites ? "Favorite Names" : "Click on a name for favorites"}
+      </h3>
 
       <ul>
         {favNamesList.map((baby) => (
